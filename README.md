@@ -6,6 +6,8 @@ Based on https://github.com/docker-library/postgres with [WAL-E](https://github.
 
 Environment variables to pass to the container for WAL-E, all of these must be present or WAL-E is not configured.
 
+`docker pull andrewgy8/docker-wale-azure`
+
 ```
 WALE_WABS_PREFIX="wabs://<bucketname>/<path>"
 WABS_ACCOUNT_NAME
