@@ -4,10 +4,10 @@
 umask u=rwx,g=rx,o=
 mkdir -p /etc/wal-e.d/env
 
-echo "$WALE_AWS_SECRET_ACCESS_KEY" > /etc/wal-e.d/env/AWS_SECRET_ACCESS_KEY
-echo "$WALE_AWS_ACCESS_KEY_ID" > /etc/wal-e.d/env/AWS_ACCESS_KEY_ID
-echo "$WALE_S3_PREFIX" > /etc/wal-e.d/env/WALE_S3_PREFIX
-echo "$WALE_AWS_REGION" > /etc/wal-e.d/env/AWS_REGION
+echo "$WALE_WABS_PREFIX" > /etc/wal-e.d/env/WALE_WABS_PREFIX
+echo "$WABS_ACCOUNT_NAME" > /etc/wal-e.d/env/WABS_ACCOUNT_NAME
+echo "$WABS_ACCESS_KEY" > /etc/wal-e.d/env/WABS_ACCESS_KEY
+echo "$WABS_SAS_TOKEN" > /etc/wal-e.d/env/WABS_SAS_TOKEN
 chown -R root:postgres /etc/wal-e.d
 
 if [ "$POSTGRES_AUTHORITY" = "slave" ]

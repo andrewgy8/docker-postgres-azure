@@ -1,10 +1,10 @@
-FROM postgres:9.4.9
+FROM postgres:9.6.5
 
-MAINTAINER Luke Smith
+MAINTAINER Andrew Graham-Yooll
 
-RUN apt-get update && apt-get install -y python3-pip python3.4 lzop pv daemontools && \
-   pip3 install wal-e[aws] && \
-   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get update && apt-get install -y python3-pip python3 lzop pv daemontools sudo && rm -rf /var/lib/apt/lists/*
+RUN pip3 install --upgrade pip
+RUN python3 -m pip install wal-e[azure] && apt-get clean
 
 # Change the entrypoint so wale will always be setup, even if the data dir already exists
 COPY entrypoint.sh /
